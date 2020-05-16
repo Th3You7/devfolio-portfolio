@@ -1,0 +1,58 @@
+// *** Reset Body and Html ***//
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: $body_font;
+}
+
+// *** Setting box-sizing of all elems ***//
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// *** Reseting all headings ***//
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font: {
+    family: $heading_font;
+    size: inherit;
+    weight: $heading_weight;
+  }
+}
+
+// *** Reseting pars *** //
+p {
+  margin: 0;
+}
+
+// *** Reseting lists ***//
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// *** Reseting anchors *** //
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+// *** Reseting btns ***//
+button {
+  background-color: transparent;
+  color: inherit;
+  border-width: 0;
+  padding: 0;
+  cursor: pointer;
+}

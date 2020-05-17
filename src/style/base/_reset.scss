@@ -23,7 +23,6 @@ h6 {
   margin: 0;
   font: {
     family: $heading_font;
-    size: inherit;
     weight: $heading_weight;
   }
 }
@@ -51,8 +50,8 @@ a {
 // *** Reseting btns ***//
 button {
   background-color: transparent;
-  color: inherit;
   border-width: 0;
   padding: 0;
+  outline: none;
   cursor: pointer;
 }

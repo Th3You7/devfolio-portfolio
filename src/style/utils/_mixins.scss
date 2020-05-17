@@ -30,3 +30,9 @@
     @content;
   }
 }
+
+//*** Mixins for background imgs ***//
+@mixin bg_img($img_url) {
+  background: url("#{$img_url}") no-repeat center center;
+  background-size: cover;
+}

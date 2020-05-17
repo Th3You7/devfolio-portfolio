@@ -3,11 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="./style/style.min.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      async
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11" async></script>
+    <title>DevFolio</title>
   </head>
   <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar_wrapper">
+          <a href="#" class="logo">DevFolio</a>
+          <button class="nav_toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <div class="nav_items">
+            <a href="#" class="nav_item">home</a>
+            <a href="#" class="nav_item">about</a>
+            <a href="#" class="nav_item">services</a>
+            <a href="#" class="nav_item">work</a>
+            <a href="#" class="nav_item">blog</a>
+            <a href="#" class="nav_item">contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <!-- #Header -->
+    <header id="header">
+      <div class="intro">
+        <div class="container">
+          <h1 class="intro_title">I am Morgan Freeman</h1>
+          <p class="subtitle"><span class="typed"></span></p>
+        </div>
+      </div>
+    </header>
 
     <script src="http://localhost:35729/livereload.js"></script>
+    <script src="./script/script.min.js"></script>
   </body>
 </html>

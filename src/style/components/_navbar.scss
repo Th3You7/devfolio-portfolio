@@ -1,0 +1,68 @@
+.navbar {
+  background: transparent;
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  min-height: 4rem;
+  padding: 0.8rem 0;
+  transition: $easeInOut;
+  padding: 1.4rem 0;
+  @include md {
+    padding: 1rem 0;
+  }
+  .container {
+    .navbar_wrapper {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+      .logo {
+        color: $sec_color;
+        font: {
+          size: 1.7rem;
+          weight: 700;
+        }
+      }
+      .nav_items {
+        display: none;
+        width: 100%;
+        margin-top: 1.4rem;
+        @include md {
+          display: flex !important;
+          width: auto;
+        }
+        .nav_item {
+          display: block;
+          text-transform: uppercase;
+          color: $prim_color;
+          font-weight: 600;
+          &:not(:last-of-type) {
+            margin-bottom: 0.6rem;
+            margin-right: 1.4rem;
+          }
+          &::after {
+            display: block;
+            content: "";
+            width: 0rem;
+            height: 0.1rem;
+            background-color: $prim_color;
+            margin-top: 0.6rem;
+            transition: $easeInOut;
+          }
+          &:hover {
+            &::after {
+              width: 2.2rem;
+            }
+          }
+          @include md {
+            color: $sec_color;
+          }
+        }
+      }
+    }
+  }
+}

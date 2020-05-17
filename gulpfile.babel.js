@@ -9,16 +9,15 @@ import livereload from "gulp-livereload";
 import autoprefixer from "gulp-autoprefixer";
 import imagemin from "gulp-imagemin";
 import htmlmin from "gulp-htmlmin";
-
 //define paths
 const paths = {
   style: {
-    src: "src/styles/style.scss",
-    dest: "dist/styles/",
+    src: "src/style/style.scss",
+    dest: "dist/style/",
   },
   script: {
-    src: "src/scripts/index.js",
-    dest: "dist/scripts/",
+    src: "src/script/index.js",
+    dest: "dist/script/",
   },
   html: {
     src: "src/*.html",
@@ -30,7 +29,7 @@ const paths = {
   },
 };
 
-const clean = () => del(["dest"]);
+const clean = () => del(["dist"]);
 
 const script = () => {
   return gulp
@@ -41,7 +40,7 @@ const script = () => {
     .pipe(sourcemaps.write())
     .pipe(
       rename({
-        basename: "sctipt",
+        basename: "script",
         suffix: ".min",
         extname: ".js",
       })
@@ -95,12 +94,12 @@ const watch = () => {
   //to reload automatically, you have to add a script tag in your html file with src of  'http://localhost:35729/livereload.js'
   livereload.listen();
   gulp.watch(paths.script.src, script);
-  gulp.watch("src/styles/**/*.scss", style);
+  gulp.watch("src/style/**/*.scss", style);
   gulp.watch(paths.html.src, html);
   gulp.watch(paths.imgs.src, imgs);
 };
 
-const build = gulp.series(clean, gulp.parallel(script, style, html, imgs));
+const build = gulp.series(clean, gulp.parallel(html, style, imgs, script));
 
 export { script };
 export { style };

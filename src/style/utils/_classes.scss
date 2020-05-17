@@ -1,0 +1,37 @@
+//*** class for togllin btn
+.open {
+  background-color: $heading_color !important;
+  &:first-of-type {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  &:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  &:last-of-type {
+    transform: rotate(-45deg) translate(6.5px, -6.5px);
+  }
+}
+
+//on scrolling navbar
+.scroll {
+  background-color: white !important;
+
+  .container {
+    .navbar_wrapper {
+      .logo {
+        color: $prim_color;
+      }
+      .nav_toggle {
+        .bar {
+          background-color: $heading_color !important;
+        }
+      }
+      .nav_items {
+        .nav_item {
+          color: $prim_color !important;
+        }
+      }
+    }
+  }
+}

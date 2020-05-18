@@ -1,8 +1,8 @@
-//*** Styling Profile Section
+//*** Styling Profile Section *** //
 #profile {
   display: block;
   width: 100%;
-  margin-top: 4rem;
+  margin: 4rem 0;
   border-radius: 2px;
   //TODO set the margin or padding at end
   .container {
@@ -147,6 +147,197 @@
           line-height: 1.5;
           font-size: 1.2rem;
           margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// *** Styling Services Section *** //
+#services {
+  display: block;
+  width: 100%;
+  margin-bottom: 3rem;
+  .container {
+    .services_heading {
+      display: block;
+      margin: 0 auto 2rem;
+      text-align: center;
+      &::after {
+        display: block;
+        content: "";
+        width: 2.5rem;
+        height: 0.3rem;
+        background-color: $prim_color;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .heading {
+        font-size: 3rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: $heading_color;
+        text-transform: uppercase;
+      }
+      .subheading {
+        color: $p_color;
+        margin-bottom: 1rem;
+      }
+    }
+    .services_wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 3rem;
+      @include md {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+      }
+      @include lg {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 3rem 2rem;
+      }
+      .service {
+        display: block;
+        background-color: white;
+        border-radius: 0.6rem;
+        padding: 2rem 1rem;
+        text-align: center;
+        box-shadow: $navbarShadow;
+        &:hover {
+          .service_icon {
+            span {
+              border-color: lighten($prim_color, 40);
+              background-color: $prim_color;
+              i {
+                color: white;
+              }
+            }
+          }
+        }
+        &_icon {
+          display: block;
+          height: auto;
+          margin-bottom: 1rem;
+
+          span {
+            display: inline-block;
+            font-size: 3rem;
+            border: 0.6rem solid $prim_color;
+            border-radius: 999px;
+            transition: $easeInOut;
+
+            i {
+              color: $heading_color;
+              transition: $easeInOut;
+            }
+            &.icon-1 {
+              padding: 1.5rem;
+            }
+            &.icon-2 {
+              padding: 1.5rem 1.3rem;
+            }
+            &.icon-3,
+            &.icon-5,
+            &.icon-6 {
+              padding: 1.5rem 1.7rem;
+            }
+            &.icon-4 {
+              padding: 1.5rem 2.2rem;
+            }
+          }
+        }
+        h3 {
+          color: $heading_color;
+          margin-bottom: 1.5rem;
+          text-transform: uppercase;
+        }
+        p {
+          line-height: 1.4;
+          color: $p_color;
+        }
+      }
+    }
+  }
+}
+
+// *** Styling Achievement Section *** //
+#achievs {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 5rem 0;
+  @include bg_img("../imgs/counters-bg.jpg");
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba($color: $prim_color, $alpha: 0.5);
+  }
+  .container {
+    .achievs_wrapper {
+      display: block;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      color: $sec_color;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      @include md {
+        flex-direction: row;
+      }
+      .achiev {
+        display: block;
+        width: 100%;
+        text-align: center;
+        &:not(:last-of-type) {
+          margin-bottom: 2rem;
+        }
+        @include md {
+          width: 50%;
+          &:nth-last-of-type(2) {
+            margin-bottom: 0;
+          }
+        }
+        @include lg {
+          width: 25%;
+          margin-bottom: 0;
+        }
+        &_icon {
+          display: block;
+          margin: 0 auto 1rem;
+          span {
+            display: inline-block;
+            font-size: 2rem;
+            border: 0.6rem solid lighten($color: $prim_color, $amount: 40);
+            border-radius: 999px;
+            &.icon-1,
+            &.icon-4 {
+              padding: 1rem 1.2rem;
+            }
+            &.icon-2 {
+              padding: 1rem 1.3rem;
+            }
+            &.icon-3 {
+              padding: 1rem;
+            }
+          }
+        }
+        &_content {
+          display: block;
+          .num {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 0.2rem;
+          }
         }
       }
     }

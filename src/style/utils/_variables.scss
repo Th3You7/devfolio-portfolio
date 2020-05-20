@@ -3,7 +3,7 @@ $mqTerm: "only screen";
 $bp-xl: "min-width: 1200px";
 $bp-lg: "min-width: 992px";
 $bp-md: "min-width: 768px";
-$bp-sm: "max-width: 767px";
+$bp-sm: "min-width: 576px";
 
 // *** Fonts *** //
 $heading_font: Arial;
@@ -18,10 +18,11 @@ $heading_color: #1e1e1e;
 $p_color: #4e4e4e;
 
 // *** Transition *** //
-$easeInOut: all 0.3s ease-in-out;
+$easeInOut: all 0.5s ease-in-out;
 
 // *** Shadow Box *** //
 //
 
 $navbarShadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.06);
 $profileShadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+$prtfShadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);

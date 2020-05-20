@@ -16,6 +16,9 @@ body {
   width: 100%;
   margin: auto;
   padding: 0 15px;
+  @include sm {
+    max-width: 540px;
+  }
   @include md {
     max-width: 720px;
   }

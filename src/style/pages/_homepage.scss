@@ -4,7 +4,6 @@
   width: 100%;
   margin: 4rem 0;
   border-radius: 2px;
-  //TODO set the margin or padding at end
   .container {
     .profile_wrapper {
       display: flex;
@@ -29,7 +28,7 @@
           display: flex;
           flex-direction: column;
           margin-bottom: 2rem;
-          @include md {
+          @include sm {
             flex-direction: row;
           }
           .profile_img {
@@ -160,30 +159,7 @@
   margin-bottom: 3rem;
   .container {
     .services_heading {
-      display: block;
-      margin: 0 auto 2rem;
-      text-align: center;
-      &::after {
-        display: block;
-        content: "";
-        width: 2.5rem;
-        height: 0.3rem;
-        background-color: $prim_color;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      .heading {
-        font-size: 3rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        color: $heading_color;
-        text-transform: uppercase;
-      }
-      .subheading {
-        color: $p_color;
-        margin-bottom: 1rem;
-      }
+      @include heading;
     }
     .services_wrapper {
       display: grid;
@@ -290,7 +266,7 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       @include md {
         flex-direction: row;
       }
@@ -337,6 +313,161 @@
             display: block;
             font-size: 2rem;
             margin-bottom: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// *** Styling Portfolio Section ***//
+#portfolio {
+  display: block;
+  width: 100%;
+  margin: 4rem 0 3rem;
+
+  .container {
+    .portfolio_heading {
+      @include heading;
+    }
+
+    .portfolio_wrapper {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 3rem;
+      @include md {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 3rem 2rem;
+      }
+
+      @include lg {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+      .portfolio_card {
+        display: block;
+        width: 100%;
+        background-color: white;
+        box-shadow: $prtfShadow;
+        .card_img {
+          display: block;
+          width: 100%;
+          overflow: hidden;
+          img {
+            display: block;
+            width: inherit;
+            transition: $easeInOut;
+          }
+        }
+        .card_content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding: 2rem 1rem;
+          .content {
+            display: block;
+            h3 {
+              color: $heading_color;
+              margin-bottom: 1rem;
+              font-weight: 300;
+              text-transform: capitalize;
+            }
+            p {
+              color: $p_color;
+              font-size: 0.8rem;
+              .card_section {
+                color: $prim_color;
+              }
+            }
+          }
+          .open_icon {
+            display: block;
+            img {
+              display: block;
+            }
+          }
+        }
+        &:hover {
+          cursor: pointer;
+          .card_img {
+            img {
+              transform: scale(1.3);
+              transform-origin: 50% 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// *** Styling Testimonials Section *** //
+#testimonials {
+  display: block;
+  width: 100%;
+  position: relative;
+  @include bg_img("../imgs/overlay-bg.jpg");
+  background-attachment: scroll;
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba($color: $prim_color, $alpha: 0.5);
+  }
+  .container {
+    #testimonials_wrapper {
+      z-index: 4;
+      display: block;
+      width: 100%;
+      color: white;
+      text-align: center;
+      padding: 4rem 0;
+      .testimonial {
+        width: 100%;
+        .test_img {
+          display: block;
+          width: 100%;
+          margin-bottom: 1rem;
+          img {
+            border-radius: 999px;
+            display: block;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+          }
+        }
+        .test_content {
+          display: block;
+          width: 100%;
+          padding: 0 1rem;
+          text-align: center;
+          @include md {
+            padding: 0 2rem;
+          }
+
+          @include lg {
+            padding: 0 6rem;
+          }
+          .author {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+          }
+
+          p {
+            font-size: 1.2rem;
+            line-height: 1.4;
+            margin-bottom: 2rem;
           }
         }
       }

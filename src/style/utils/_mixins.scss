@@ -36,3 +36,31 @@
   background: url("#{$img_url}") no-repeat center center;
   background-size: cover;
 }
+
+// *** Mixins for heading ***//
+@mixin heading {
+  display: block;
+  margin: 0 auto 2rem;
+  text-align: center;
+  &::after {
+    display: block;
+    content: "";
+    width: 2.5rem;
+    height: 0.3rem;
+    background-color: $prim_color;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .heading {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: $heading_color;
+    text-transform: uppercase;
+  }
+  .subheading {
+    color: $p_color;
+    margin-bottom: 1rem;
+  }
+}

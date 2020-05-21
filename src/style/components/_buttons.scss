@@ -16,3 +16,20 @@
     }
   }
 }
+
+// *** Styling back to top btn
+
+#back_top {
+  display: block;
+  position: fixed;
+  bottom: 5%;
+  right: 2%;
+  z-index: 999;
+  span {
+    font-size: 1.2rem;
+    padding: 1rem 1.2rem;
+    color: white;
+    background-color: $prim_color;
+    border-radius: 50%;
+  }
+}

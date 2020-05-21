@@ -1,4 +1,5 @@
 const typedPara = document.querySelector(".typed");
+
 //** Typed */
 const options = {
   strings: [
@@ -17,7 +18,7 @@ const options = {
 
 const typed = new Typed(typedPara, options);
 
-//jQuery
+//*** jQuery */
 $(function () {
   //Toggle
   $(".nav_toggle").on("click", function () {
@@ -30,6 +31,11 @@ $(function () {
       $(".nav_items").slideToggle();
     }
   });
+
+  // handle navbar trouble when you load the page
+  if ($(this).scrollTop() > 100) {
+    $(".navbar").addClass("scroll");
+  }
 
   //scroll
   $(window).on("scroll", function () {

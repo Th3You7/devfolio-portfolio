@@ -1,0 +1,30 @@
+// *** Styling footer *** //
+#footer {
+  display: block;
+  padding: 3rem 0;
+  position: relative;
+  @include bg_img("../imgs/overlay-bg.jpg");
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba($color: $prim_color, $alpha: 0.7);
+  }
+  .container {
+    .copyright_wrapper {
+      position: relative;
+      z-index: 2;
+      display: block;
+      color: white;
+      text-align: center;
+      p {
+        padding-bottom: 0.6rem;
+      }
+    }
+  }
+}

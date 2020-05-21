@@ -474,3 +474,113 @@
     }
   }
 }
+
+// *** Styling Blog Section *** //
+#blog {
+  display: block;
+  width: 100%;
+  margin: 5rem 0;
+  .container {
+    .blog_heading {
+      @include heading;
+    }
+
+    .blog_wrapper {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-gap: 2rem 0;
+      @include md {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 2rem 1rem;
+      }
+      @include lg {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 0rem 1rem;
+      }
+      .blog_card {
+        display: block;
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        overflow: hidden;
+        box-shadow: $prtfShadow;
+
+        .card_img {
+          display: block;
+          width: 100%;
+          cursor: pointer;
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+        .card_content {
+          display: block;
+          padding: 2rem 1rem;
+          position: relative;
+          background-color: white;
+          .category {
+            display: block;
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            transform: translate(-50%);
+            background-color: $prim_color;
+            padding: 0.5rem 1rem;
+            border-radius: 0.2rem;
+            h6 {
+              text-transform: uppercase;
+              color: white;
+            }
+          }
+          h3 {
+            color: $heading_color;
+            margin: 0 0 1rem;
+            font-size: 1.5rem;
+            font-weight: 300;
+            cursor: pointer;
+          }
+
+          p {
+            color: $p_color;
+            line-height: 1.4;
+          }
+        }
+
+        .card_footer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 0.5rem;
+          background-color: rgba(0, 0, 0, 0.03);
+          border-top: 1px solid rgba(0, 0, 0, 0.125);
+          .post_author {
+            display: block;
+            display: flex;
+            align-items: center;
+            img {
+              width: 28px;
+              height: 28px;
+              border-radius: 50%;
+              margin-right: 0.5rem;
+            }
+            span {
+              color: $heading_color;
+            }
+          }
+          .post_date {
+            display: block;
+            span {
+              color: lighten($color: $p_color, $amount: 35);
+            }
+            time {
+              color: $p_color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

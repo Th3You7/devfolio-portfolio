@@ -1,0 +1,33 @@
+//*** Styling Preloader ***//
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  div {
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    border: 0.6rem solid lighten($color: $prim_color, $amount: 35);
+    border-top-color: $prim_color;
+    border-radius: 50%;
+    animation: loading 1.5s linear infinite;
+  }
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -19,6 +19,18 @@ const options = {
 const typed = new Typed(typedPara, options);
 
 //*** jQuery */
+
+//*** Preloader */
+$(window).on("load", function () {
+  if ($(".preloader")) {
+    $(".preloader")
+      .delay(100)
+      .fadeOut("slow", function () {
+        $(this).remove();
+      });
+  }
+});
+
 $(function () {
   //Toggle
   $(".nav_toggle").on("click", function () {
@@ -32,7 +44,7 @@ $(function () {
     }
   });
 
-  // handle navbar trouble when you load the page
+  // handle navbar trouble when you reload the page
   if ($(this).scrollTop() > 100) {
     $(".navbar").addClass("scroll");
   }
@@ -51,7 +63,7 @@ $(function () {
     }
   });
 
-  //carousl
+  //testimonials carousel
   $(".owl-carousel").owlCarousel({
     margin: 20,
     autoplay: true,
@@ -62,5 +74,14 @@ $(function () {
         items: 1,
       },
     },
+  });
+
+  // Back to top button
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $("#back_top").fadeIn("slow");
+    } else {
+      $("#back_top").fadeOut("slow");
+    }
   });
 });

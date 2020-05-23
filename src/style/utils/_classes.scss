@@ -13,7 +13,7 @@
   }
 }
 
-//on scrolling navbar
+//*** on scrolling navbar
 .scroll {
   background-color: white !important;
 
@@ -34,4 +34,17 @@
       }
     }
   }
+}
+
+//*** clearfix
+.clearfix {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+//*** shadow class
+
+.shadow {
+  box-shadow: $navbarShadow;
 }

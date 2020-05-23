@@ -70,12 +70,6 @@ const style = () => {
 const html = () => {
   return gulp
     .src(paths.html.src)
-    .pipe(
-      rename({
-        basename: "index",
-        extname: ".html",
-      })
-    )
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest(paths.html.dest))
     .pipe(livereload());

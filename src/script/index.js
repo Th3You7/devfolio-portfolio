@@ -1,34 +1,33 @@
 const typedPara = document.querySelector(".typed");
 
-//** Typed */
-const options = {
-  strings: [
-    "CEO DevFolio",
-    "Web Developer",
-    "Web Designer",
-    "Frontend Developer",
-    "Graphic Designer",
-  ],
-  typeSpeed: 80,
-  loop: true,
-  backDelay: 1100,
-  backSpeed: 30,
-  cursorChar: "|",
-};
+if (typedPara) {
+  //** Typed */
+  const options = {
+    strings: [
+      "CEO DevFolio",
+      "Web Developer",
+      "Web Designer",
+      "Frontend Developer",
+      "Graphic Designer",
+    ],
+    typeSpeed: 80,
+    loop: true,
+    backDelay: 1100,
+    backSpeed: 30,
+    cursorChar: "|",
+  };
 
-const typed = new Typed(typedPara, options);
-
-//*** jQuery */
+  const typed = new Typed(typedPara, options);
+}
+//! *** jQuery ***/
 
 //*** Preloader */
 $(window).on("load", function () {
-  if ($(".preloader")) {
-    $(".preloader")
-      .delay(100)
-      .fadeOut("slow", function () {
-        $(this).remove();
-      });
-  }
+  $(".preloader")
+    .delay(100)
+    .fadeOut("slow", function () {
+      $(this).remove();
+    });
 });
 
 $(function () {
@@ -46,15 +45,15 @@ $(function () {
 
   // handle navbar trouble when you reload the page
   if ($(this).scrollTop() > 100) {
-    $(".navbar").addClass("scroll");
+    $(".navbar").addClass("scroll shadow");
   }
 
   //scroll
   $(window).on("scroll", function () {
     if ($(this).scrollTop() > 100) {
-      $(".navbar").addClass("scroll");
+      $(".navbar").addClass("scroll shadow");
     } else {
-      $(".navbar").removeClass("scroll");
+      $(".navbar").removeClass("scroll shadow");
       //check if navbar is opened
       if ($(".bar").hasClass("open")) {
         $(".bar").removeClass("open");
@@ -64,18 +63,19 @@ $(function () {
   });
 
   //testimonials carousel
-  $(".owl-carousel").owlCarousel({
-    margin: 20,
-    autoplay: true,
-    autoplayTimeout: 4000,
-    autoplayHoverPause: true,
-    responsive: {
-      0: {
-        items: 1,
+  if ($(".owl-carousel").length) {
+    $(".owl-carousel").owlCarousel({
+      margin: 20,
+      autoplay: true,
+      autoplayTimeout: 4000,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1,
+        },
       },
-    },
-  });
-
+    });
+  }
   // Back to top button
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {

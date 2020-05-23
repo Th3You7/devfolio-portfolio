@@ -162,3 +162,94 @@
     }
   }
 }
+
+// *** Styling Blog Form *** //
+.reply {
+  .form {
+    display: block;
+    width: 100%;
+    background-color: inherit;
+    margin-bottom: 3rem;
+
+    h3 {
+      color: $heading_color;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      &:after {
+        content: "";
+        display: block;
+        height: 4px;
+        width: 6rem;
+        background-color: $prim_color;
+        margin-top: 0.6rem;
+      }
+    }
+
+    form#blog_form {
+      display: block;
+      width: 100%;
+      .name {
+        display: block;
+        background: inherit;
+        border: 1px solid lighten($color: $p_color, $amount: 50);
+        border-radius: 4px;
+        width: 100%;
+        padding: 0.6rem;
+        color: $p_color;
+        margin-bottom: 1rem;
+        outline-color: $prim_color;
+        transition: $easeInOut;
+
+        @include lg {
+          display: inline-block;
+          width: 49%;
+          margin-right: 3%;
+        }
+      }
+      .email {
+        display: block;
+        background: inherit;
+        border: 1px solid lighten($color: $p_color, $amount: 50);
+        border-radius: 4px;
+        width: 100%;
+        padding: 0.6rem;
+        color: $p_color;
+        margin-bottom: 1rem;
+        outline-color: $prim_color;
+        transition: $easeInOut;
+
+        @include lg {
+          display: inline-block;
+          width: 47%;
+        }
+      }
+
+      .website {
+        display: block;
+        background: inherit;
+        border: 1px solid lighten($color: $p_color, $amount: 50);
+        border-radius: 4px;
+        width: 100%;
+        padding: 0.6rem;
+        color: $p_color;
+        margin-bottom: 1rem;
+        outline-color: $prim_color;
+        transition: $easeInOut;
+      }
+
+      #message {
+        @extend .website;
+        height: 10rem;
+      }
+
+      #submit {
+        padding: 1rem 2rem;
+        border-radius: 999px;
+        color: white;
+        background-color: $prim_color;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

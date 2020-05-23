@@ -507,13 +507,15 @@
         overflow: hidden;
         box-shadow: $prtfShadow;
 
-        .card_img {
-          display: block;
-          width: 100%;
-          cursor: pointer;
-          img {
+        a {
+          .card_img {
             display: block;
             width: 100%;
+            cursor: pointer;
+            img {
+              display: block;
+              width: 100%;
+            }
           }
         }
         .card_content {
@@ -535,12 +537,14 @@
               color: white;
             }
           }
-          h3 {
-            color: $heading_color;
-            margin: 0 0 1rem;
-            font-size: 1.5rem;
-            font-weight: 300;
-            cursor: pointer;
+          a {
+            h3 {
+              color: $heading_color;
+              margin: 0 0 1rem;
+              font-size: 1.5rem;
+              font-weight: 300;
+              cursor: pointer;
+            }
           }
 
           p {
